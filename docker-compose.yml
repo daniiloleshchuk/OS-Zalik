@@ -1,0 +1,13 @@
+version: '3'
+services:
+  some_strange_service:
+    container_name: some_strange_container
+    restart: on-failure
+    build: .
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/healthcheck"]
+      start_period: 60s
+    ports:
+      - 8080:8080

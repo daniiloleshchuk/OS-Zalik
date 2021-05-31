@@ -4,8 +4,6 @@ services:
     container_name: some_strange_container
     restart: on-failure
     build: .
-    env_file:
-      - .env
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/healthcheck"]
       start_period: 60s

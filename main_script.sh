@@ -8,7 +8,6 @@ mvn install
 mvn package -Dmaven.test.skip=true
 
 export MYSQL_PWD=password
-/usr/bin/mysql -u root -e "CREATE DATABASE IF NOT EXISTS oleshchuk_db;"
 /usr/bin/mysql -u root -e "FLUSH PRIVILEGES;"
 mvn spring-boot:run
 
